@@ -30,13 +30,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     │ q w e r t y  -  b a s e  l a y e r                        │
     └───────────────────────────────────────────────────────────┘
     ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-    │   ESC   │    Q    │    W    │    E    │    R    │    T    │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │    Y    │    U    │    I    │    O    │    P    │ BSPACE  │
+    │   ESC   │    Q    │    W    │    E    │    R    │    T    │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │    Y    │    U    │    I    │    O    │    P    │ CAPSLK  │
     ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     │   TAB   │    A    │    S    │    D    │    F    │    G    ├─╯                ╰─┤    H    │    J    │    K    │    L    │    ;    │ ENTER   │
     └─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┘
               │    Z    │    X    │    C    │    V    │    B    │                    │    N    │    M    │    ,    │    .    │    /    │
               └─────────┴─────────┼─────────┼─────────┼─────────┼─────────┐┌─────────┼─────────┼─────────┼─────────┼─────────┴─────────┘
-                                  │ LAYER3  │  SHIFT  │ BSPACE  │  SPACE  ││  ENTER  │  RCTRL  │  RALT   │ LAYER2  │
+                                  │ BACKSPC │ SYMBOL  │ NAVFUN  │  ALT    ││  LCTRL  │ LSHIFT  │ SPACE   │ LMETA   │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘                            */
 
     [_QWERTY] = LAYOUT_6x3_4(
@@ -44,8 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_ESC,    KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,                          KC_Y,     KC_U,     KC_I,      KC_O,     KC_P,     KC_CAPS,
                 KC_TAB,    KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,      KC_L,     KC_SCLN,  KC_ENTER,
                            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,                          KC_N,     KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,
-
-                                       KC_BSPC,   OSM(MOD_LSFT),  MO(_SYMBOL),   OSM(MOD_LGUI),         OSM(MOD_LCTL),  MO(_NAVFUN),  KC_SPC,  OSM(MOD_LALT)
+                                       KC_BSPC,   MO(_SYMBOL),  MO(_NAVFUN), OSM(MOD_LALT), OSM(MOD_LCTL),  OSM(MOD_LSFT),    KC_SPC,  OSM(MOD_LGUI)
     ),
 
     [_COLMAK_DH] = LAYOUT_6x3_4(
@@ -53,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_ESC,    KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,      KC_Y,     KC_SCLN,  KC_CAPS,
                 KC_TAB,    KC_A,     KC_R,     KC_S,     KC_T,     KC_G,                          KC_M,     KC_N,     KC_E,      KC_I,     KC_O,     KC_ENTER,
                            KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,                          KC_K,     KC_H,     KC_COMM,   KC_DOT,   KC_SLSH,
+                                       KC_BSPC,   MO(_SYMBOL),  MO(_NAVFUN), OSM(MOD_LALT), OSM(MOD_LCTL),  OSM(MOD_LSFT),    KC_SPC,  OSM(MOD_LGUI)
 
-                                       KC_BSPC,   OSM(MOD_LSFT),  MO(_SYMBOL),   OSM(MOD_LGUI),         OSM(MOD_LCTL),  MO(_NAVFUN),  KC_SPC,  OSM(MOD_LALT)
     ),
 
     [_NAVFUN] = LAYOUT_6x3_4(
