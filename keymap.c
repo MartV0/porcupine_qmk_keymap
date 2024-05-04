@@ -11,8 +11,8 @@
 #include QMK_KEYBOARD_H
 
 enum porcupine_layers {
-    _COLMAK_DH,
     _QWERTY,
+    _COLMAK_DH,
     _SYMBOL,
     _NAVFUN,
 };
@@ -38,14 +38,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               └─────────┴─────────┼─────────┼─────────┼─────────┼─────────┐┌─────────┼─────────┼─────────┼─────────┼─────────┴─────────┘
                                   │ LAYER3  │  SHIFT  │ BSPACE  │  SPACE  ││  ENTER  │  RCTRL  │  RALT   │ LAYER2  │
                                   └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘                            */
-    [_COLMAK_DH] = LAYOUT_6x3_4(
-            //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-                KC_ESC,    KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,      KC_Y,     KC_SCLN,  KC_CAPS,
-                KC_TAB,    KC_A,     KC_R,     KC_S,     KC_T,     KC_G,                          KC_M,     KC_N,     KC_E,      KC_I,     KC_O,     KC_ENTER,
-                           KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,                          KC_K,     KC_H,     KC_COMM,   KC_DOT,   KC_SLSH,
-
-                                       KC_BSPC,   KC_LSFT,  MO(_SYMBOL),   KC_LGUI,         KC_LCTL,  MO(_NAVFUN),  KC_SPC,  KC_LALT
-    ),
 
     [_QWERTY] = LAYOUT_6x3_4(
             //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -53,7 +45,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_TAB,    KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,      KC_L,     KC_SCLN,  KC_ENTER,
                            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,                          KC_N,     KC_M,     KC_COMM,   KC_DOT,   KC_SLSH,
 
-                                       KC_BSPC,   KC_LSFT,  MO(_SYMBOL),   KC_LGUI,         KC_LCTL,  MO(_NAVFUN),  KC_SPC,  KC_LALT
+                                       KC_BSPC,   OSM(MOD_LSFT),  MO(_SYMBOL),   OSM(MOD_LGUI),         OSM(MOD_LCTL),  MO(_NAVFUN),  KC_SPC,  OSM(MOD_LALT)
+    ),
+
+    [_COLMAK_DH] = LAYOUT_6x3_4(
+            //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+                KC_ESC,    KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,      KC_Y,     KC_SCLN,  KC_CAPS,
+                KC_TAB,    KC_A,     KC_R,     KC_S,     KC_T,     KC_G,                          KC_M,     KC_N,     KC_E,      KC_I,     KC_O,     KC_ENTER,
+                           KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,                          KC_K,     KC_H,     KC_COMM,   KC_DOT,   KC_SLSH,
+
+                                       KC_BSPC,   OSM(MOD_LSFT),  MO(_SYMBOL),   OSM(MOD_LGUI),         OSM(MOD_LCTL),  MO(_NAVFUN),  KC_SPC,  OSM(MOD_LALT)
     ),
 
     [_NAVFUN] = LAYOUT_6x3_4(
@@ -66,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYMBOL] = LAYOUT_6x3_4(
                 KC_GRAVE,  KC_EXLM,    KC_AT,     KC_HASH, KC_DOLLAR, KC_PERC,            KC_CIRC,     KC_AMPR,    KC_ASTR,     KC_LPRN,   KC_RPRN,  KC_BACKSLASH,
-                 _______,     KC_1,     KC_2,        KC_3,      KC_4,    KC_5,            _______,     KC_MINS,    KC_PLUS,     KC_LBRC,   KC_RBRC,  KC_PIPE,
-                              KC_6,     KC_7,        KC_8,      KC_9,    KC_0,            _______,     KC_UNDS,    KC_EQL,      KC_LCBR,   KC_RCBR,
+                 _______,     KC_1,     KC_2,        KC_3,      KC_4,    KC_5,            KC_DQT,     KC_MINS,    KC_PLUS,     KC_LBRC,   KC_RBRC,  KC_PIPE,
+                              KC_6,     KC_7,        KC_8,      KC_9,    KC_0,            KC_QUOT,     KC_UNDS,    KC_EQL,      KC_LCBR,   KC_RCBR,
                                      _______,     _______,   _______, _______,            _______,     _______,    _______,     _______
     ),
     /*
